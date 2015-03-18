@@ -7,6 +7,7 @@ var myClientID = '3f48cabe-51f6-463d-94e4-dcda0cf35454',
     oAuthProviderSite = 'http://localhost:3000',
     myRedirectUri = 'http://localhost:3001/callback';
 
+
 var oauth2 = require('simple-oauth2')({
     clientID: myClientID,
     clientSecret: myClientSecret,
@@ -53,7 +54,7 @@ app.get('/callback', function (req, res) {
 
         //Get User Object from token
         request.get(
-            'http://localhost:3000/oauth/user',
+            oAuthProviderSite + '/oauth/user',
             {
                 'auth': {
                     'bearer': result.access_token

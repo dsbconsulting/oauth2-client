@@ -2,16 +2,21 @@ var express = require('express'),
     app = express(),
     request = require('request');
 
+var myClientID = '3f48cabe-51f6-463d-94e4-dcda0cf35454',
+    myClientSecret = '7a0c9278-2487-422e-9d21-8afbeca87de8',
+    oAuthProviderSite = 'http://localhost:3000',
+    myRedirectUri = 'http://localhost:3001/callback';
+
 var oauth2 = require('simple-oauth2')({
-    clientID: '3f48cabe-51f6-463d-94e4-dcda0cf35454',
-    clientSecret: '7a0c9278-2487-422e-9d21-8afbeca87de8',
-    site: 'http://localhost:3000',
+    clientID: myClientID,
+    clientSecret: myClientSecret,
+    site: oAuthProviderSite,
     tokenPath: '/oauth/token'
 });
 
 // Authorization uri definition
 var authorization_uri = oauth2.authCode.authorizeURL({
-    redirect_uri: 'http://localhost:3001/callback',
+    redirect_uri: myRedirectUri,
     grant_type: 'authorization_code',
     response_type: 'code'
 });

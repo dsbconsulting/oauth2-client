@@ -13,4 +13,4 @@ Run:
     $ npm install
     $ node app.js
 
-Visit http://localhost:3001
+Visit [http://localhost:3001](http://localhost:3001).

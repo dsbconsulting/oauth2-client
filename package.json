@@ -1,0 +1,11 @@
+{
+  "name": "oauth2Client",
+  "description": "Simple oAuth2 Client",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "latest",
+    "simple-oauth2": "latest",
+    "request": "*"
+  }
+}

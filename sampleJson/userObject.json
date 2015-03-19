@@ -1,0 +1,16 @@
+{
+  "name": "Analytics User",
+  "email": "analyticsuser@asperasoft.com",
+  "picture": "Analytics User",
+  "website": "Analytics User",
+  "tags": [
+    "asdf2",
+    "asdf"
+  ],
+  "organization": {
+    "name": "Aspera",
+    "email": "admin@aspera.com",
+    "phone": "111-222-3333",
+    "website": "http://asperasoft.com"
+  }
+}

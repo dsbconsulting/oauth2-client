@@ -80,6 +80,34 @@ app.get('/', function (req, res) {
     res.send('Hello, I am an awesome oauth2 client.<br><a href="/auth">Log in with AsperaID</a>');
 });
 
+
+
+
+// Get the access token object via Password grant
+app.get('/authPass', function (req, res) {
+
+    var token;
+    oauth2.password.getToken({
+        username: 'analyticsuser@asperasoft.com',
+        password: 'batman'
+    }, saveToken);
+
+    // Save the access token
+    function saveToken(error, result) {
+        if (error) { console.log('Access Token Error', error.message); }
+        token = oauth2.accessToken.create(result);
+
+        oauth2.api('GET', '/oauth/user', {
+            access_token: token.token.access_token
+        }, function (err, data) {
+            console.log(data);
+        });
+    };
+
+});
+
+
+
 app.listen(3001);
 
 console.log('Express server started on port 3001');
